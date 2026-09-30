@@ -1,0 +1,6 @@
+﻿namespace AccesoDatos.Models
+{
+    
+}
+
+
