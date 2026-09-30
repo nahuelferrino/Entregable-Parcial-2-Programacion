@@ -8,7 +8,21 @@ namespace AccesoDatos.Data
         // Aca va lo siguiente: public DbSet<clase> clase { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlite("Data Source=C:\\databases\\BaseDatosEjercicios.db");
+            string rutaBaseDeDatos = Path.GetFullPath(
+                Path.Combine(
+                    AppContext.BaseDirectory,
+                    "..",
+                    "..",
+                    "..",
+                    "..",
+                   "AccesoDatos",
+                   "BaseDatosEjercicios.db"
+                )
+            );
+
+            optionsBuilder.UseSqlite(
+                $"Data Source={rutaBaseDeDatos}"
+            );
         }
     }
 }
